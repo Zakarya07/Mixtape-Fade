@@ -1,12 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Css/main.css">
-</head>
-<body>
-    
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="Css/main.css">
+        <title>Fade Effect Project</title>
+    </head>
+
+    <body>
+
+        <!------------------------------------------------ header ------------------------------------- -->
+        <header>
+            <!-- Navigation Bar -->
+            <nav>
+                <span id="logo_contain">
+                    <img src="Logos/logo_transparent.png" alt="Logo" height="75px">
+                </span>
+            </nav>
+            <!-- Header's Title -->
+            <h1 class="header_title">Add a Title</h1>
+        </header>
+
+        <!----------------------------------------------------- Section that contain the fade Effect -->
+        <section class="fade_section">
+            <!-- Title of section services -->
+            <h1>Huge Title</h1>
+            <!-- Div that contain the image that is next to the text that is gone a be fadeIn -->
+            <div class="image_container_fade_section"></div>
+            <!-- Div that contain the paragraph tag that is gone a be fadeIn -->
+            <div class="fade_paragraph_container">
+                <!-- Paragraphs -->
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto accusamus voluptatem quam officiis,
+                    odio esse!</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto accusamus voluptatem quam officiis,
+                    odio esse!</p>
+            </div>
+        </section>
+
+        <!---------------------------------------------------- Section that contain the Services -->
+        <section class="services_container">
+
+            <!------------------------- Service N°1 -->
+            <div class="service_1">
+                <div class="service_image">
+                    <span class="service_number">01</span>
+                </div>
+                <h2 class="service_title">What We Do</h2>
+                <p class="service_explain">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim!
+                </p>
+            </div>
+
+            <!-------------------------- Service N°2 -->
+            <div class="service_2">
+                <div class="service_image">
+                    <span class="service_number">02</span>
+                </div>
+                <h2 class="service_title">How We Help</h2>
+                <p class="service_explain">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro velit quas
+                    consectetur doloribus veritatis dolorem.</p>
+            </div>
+
+            <!--------------------------- Service N°3 -->
+            <div class="service_3">
+                <div class="service_image">
+                    <span class="service_number">03</span>
+                </div>
+                <h2 class="service_title">Proven Success</h2>
+                <p class="service_explain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore impedit
+                    molestias repellendus, mollitia amet odit quos corporis voluptatem corrupti voluptatum dolorem
+                    officiis labore in suscipit unde. Soluta molestiae sequi sunt.</p>
+            </div>
+        </section>
+
+        <!------------------------------------------------------------- Section Contact -->
+        <section class="contact">
+
+            <!----------------- Div that contain Form -->
+
+            <div class="contain_form">
+
+                <!-- Contact Section Title -->
+                <h2 class="newsletters_heading">sign up to our newsletter</h2>
+
+                <!-- Contact Form -->
+                <form action="test.php" method="POST">
+                    <label for="email">saississez votre adresse e-mail ici</label>
+                    <input type="email">
+                    <input type="submit" value="Envoyer">
+                    <p class="message_send_confirmation">Merci pour votre envoi !</p>
+                </form>
+
+            </div>
+            <!----------------------- Div that contains icons of partners -->
+            <div class="logo_and_bussiness_name">
+                <a href=""><img src="Logos/logo.png" height="70px" alt="logo"></a>
+                <p id="bussiness_name">Mixtape</p>
+            </div>
+            <!----------------------- Div that contains icons of partners -->
+            <div class="partner">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin-in"></i>
+
+            </div>
+
+            <!----------------------- Div that contains Informations like phone number, adress...  -->
+            <div class="information">
+                <p id="information_email">zakarya.elkhattabi@gmail.com</p>
+                <p id="information_phone_number">Tel: 123-456-7890</p>
+                <p id="information_address">500 Lorem ipsum dolor, SF</p>
+            </div>
+
+            <!----------------- Footer -->
+            <footer>
+                <!-- Copyright Text -->
+                <h5 class="copy_right">
+                    &copy; 2021 by Mixtape.
+                </h5>
+                <h5 class="copy_right">
+                All Right Reserved.
+                </h5>
+            </footer>
+
+        </section>
+        <button type="button" id="topButton">^</button>
+    </body>
+
 </html>
