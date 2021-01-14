@@ -1,0 +1,16 @@
+@mixin display_flex ($flex-direction,$justify_content,$align_items) {
+display: flex;
+flex-direction: $flex-direction;
+justify-content: $justify_content;
+align-items: $align_items;    
+}
+@mixin font_weight ($weight_value) {
+font-weight: $weight_value;   
+}
+@mixin font_size ($sizeValue) {
+font-size:#{$sizeValue}em;   
+}
+
+// %lorem{
+// //   lorem;
+// }
