@@ -1,8 +1,8 @@
 // ------------------------------------------------- Imports Partials 
 @import "variables", "config";
+//--------------------------------------------------------------------- Basic Code
 
-// Basic Code
-
+// Remome some default style
 *{
     margin: 0;
     padding: 0;
@@ -14,3 +14,44 @@ html{
 }
 
 
+body{
+    
+}
+
+//------------------------------------------------------------------------ H E A D E R
+header{
+    background-image: url("../Images/Images_For_Phone/header.jpg");
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    //----------------------------------- NavBar
+    nav{
+        height:10vh;
+        width: 100%;
+        padding: $padding/4 $padding/2;
+        background:transparent;
+        box-shadow:0px 1px 2px rgba(56, 55, 55, 0.5);
+        @include display_flex(row,flex-start,center);
+        & a {
+            height: 100%;
+        }
+        span#logo_contain{
+            width: 20%;
+            height: 100%;
+            @include display_flex(row,center,center);
+            & img{
+                height:100%;
+            }
+        }
+    }
+    // Heading (h1) of header
+    h1.header_title{
+        color: $light_color;
+        text-align: center;
+        @include font_size(3);
+    }
+}
+//------------------------------------------------ S E C T I O N __ S E R V I C E S
