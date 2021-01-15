@@ -13,9 +13,8 @@ html {
     scroll-behavior: smooth;
 }
 
-
-body {}
-
+body {
+}
 //------------------------------------------------------------------------ H E A D E R
 header {
     background-image: url("../Images/Images_For_Phone/header.jpg");
@@ -58,16 +57,13 @@ header {
     }
 }
 
-//------------------------------------------------ S E C T I O N __ S E R V I C E S
-
+//---------------------------------------------------------------------- S E C T I O N __ F A D E
 section.fade_section {
     @include display_flex(column,unset,center);
     padding: 0 $padding/1.5;
     // --------------------- h1 Title of Fade Section
     h1#fade_section_title {
-        text-align: center;
-        @include font_size(2.75);
-        padding:$padding/2 0;
+        @extend %sections_title;
     }
     div.image_container_fade_section{
         background-image: url("../Images/Images_For_Phone/Image_Fade.jpg");
@@ -81,7 +77,7 @@ section.fade_section {
     div.fade_paragraph_container{
         width: 80%;
         margin:0 auto $margin;
-
+        
         p{
             @include font_size(1.5);
             text-align: center;
@@ -99,3 +95,103 @@ section.fade_section {
         }
     }
 }
+
+//----------------------------------------------------------  S E C T I O N __ S E R V I C E S
+section.services_container{
+    padding: $padding/2;
+    box-shadow:10vw -.5vh 2px rgb(212, 212, 212);
+    @include display_flex(column,center,center);
+    //------------------------ Service Title
+    h1{
+    @extend %sections_title;
+    }
+    // -----------------Service N ° 1
+    div.service_1{
+        @include display_flex(column,center,center);
+        margin: $margin auto;
+        div.service_image{
+            background-image: url("../Images/Images_For_Phone/service_1.jpg");
+            background-size:cover;
+            height: 60vh;
+            width: 100%;
+            @include display_flex(column,flex-end,flex-start);
+            // Span containing service Number
+            span.service_number{
+                padding: $padding/2;
+                background-color: $bg_dark;
+                color: $light_color;
+                @include font_size(1.5);
+            }
+        }
+        h2.service_title{
+            padding:$padding/1.75 0;
+            width:100%;
+            @include font_size(2);
+            @include font_weight(700);
+        }
+        p.service_explain{
+            @include font_size(1.2);
+            padding:$padding/2.5 0;
+            line-height: 4vh;
+        }
+    }
+    div.service_2{
+        @include display_flex(column,center,center);
+        margin: $margin auto;
+        div.service_image{
+            background-image: url("../Images/Images_For_Phone/service_2.jpg");
+            background-size:cover;
+            height: 60vh;
+            width: 100%;
+            @include display_flex(column,flex-end,flex-start);
+            // Span containing service Number
+            span.service_number{
+                padding: $padding/2;
+                background-color: $bg_dark;
+                color: $light_color;
+                @include font_size(1.5);
+            }
+        }
+        h2.service_title{
+            padding:$padding/1.75 0;
+            width:100%;
+            @include font_size(2);
+            @include font_weight(700);
+        }
+        p.service_explain{
+            @include font_size(1.2);
+            padding:$padding/2.5 0;
+            line-height: 4vh;
+        }
+    }
+    div.service_3{
+        @include display_flex(column,center,center);
+        margin: $margin auto;
+        div.service_image{
+            background-image: url("../Images/Images_For_Phone/service_3.jpg");
+            background-size:cover;
+            height: 60vh;
+            width: 100%;
+            @include display_flex(column,flex-end,flex-start);
+            // Span containing service Number
+            span.service_number{
+                padding: $padding/2;
+                background-color: $bg_dark;
+                color: $light_color;
+                @include font_size(1.5);
+            }
+        }
+        h2.service_title{
+            padding:$padding/1.75 0;
+            width:100%;
+            @include font_size(2);
+            @include font_weight(700);
+        }
+        p.service_explain{
+            @include font_size(1.2);
+            padding:$padding/2.5 0;
+            line-height: 4vh;
+        }
+    }
+}
+

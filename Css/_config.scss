@@ -1,16 +1,20 @@
-@mixin display_flex ($flex-direction,$justify_content,$align_items) {
-display: flex;
-flex-direction: $flex-direction;
-justify-content: $justify_content;
-align-items: $align_items;    
-}
-@mixin font_weight ($weight_value) {
-font-weight: $weight_value;   
-}
-@mixin font_size ($sizeValue) {
-font-size:#{$sizeValue}em;   
+@mixin display_flex ($flex-direction, $justify_content, $align_items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify_content;
+    align-items: $align_items;
 }
 
-// %lorem{
-// //   lorem;
-// }
+@mixin font_weight ($weight_value) {
+    font-weight: $weight_value;
+}
+
+@mixin font_size ($sizeValue) {
+    font-size:#{$sizeValue}em;
+}
+
+%sections_title {
+    text-align: center;
+    @include font_size(2.75);
+    padding: $padding/2 0;
+}
