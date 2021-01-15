@@ -14,11 +14,13 @@ html {
 }
 
 body {
+    font-family: $font_Poppins;
 }
+
 //------------------------------------------------------------------------ H E A D E R
 header {
     background-image: url("../Images/Images_For_Phone/header.jpg");
-    height:100vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -32,7 +34,6 @@ header {
         width: 100%;
         padding: $padding/4 $padding/2;
         background: transparent;
-        box-shadow: 0px 1px 2px rgba(56, 55, 55, 0.5);
         @include display_flex(row, flex-start, center);
 
         & a {
@@ -49,149 +50,326 @@ header {
             }
         }
     }
+
     //----------------------- Heading (h1) of header
     h1.header_title {
         color: $light_color;
         text-align: center;
-        @include font_size(3.5);
+        @include font_size(3.25);
+        @include font_weight(600);
     }
 }
 
 //---------------------------------------------------------------------- S E C T I O N __ F A D E
 section.fade_section {
-    @include display_flex(column,unset,center);
+    @include display_flex(column, unset, center);
     padding: 0 $padding/1.5;
+
     // --------------------- h1 Title of Fade Section
     h1#fade_section_title {
         @extend %sections_title;
+        @include font_weight(500);
     }
-    div.image_container_fade_section{
+
+    //  Div that contain Background Image
+    div.image_container_fade_section {
         background-image: url("../Images/Images_For_Phone/Image_Fade.jpg");
         width: 80%;
         height: 45vh;
         background-size: cover;
         background-position: center bottom;
-        background-repeat:no-repeat;
+        background-repeat: no-repeat;
         margin: 0 auto $margin;
     }
-    div.fade_paragraph_container{
+
+    div.fade_paragraph_container {
         width: 80%;
-        margin:0 auto $margin;
-        
-        p{
+        margin: 0 auto $margin;
+
+        // Paragraphs 
+        p {
             @include font_size(1.5);
+            @include font_weight(300);
             text-align: center;
             letter-spacing: 1px;
             line-height: 4vh;
             padding: $padding/3 $padding/3;
             margin: 0 auto $margin;
         }
-        
-        & p:nth-of-type(1){
+
+        & p:nth-of-type(1) {
             text-align: left;
         }
-        & p:nth-of-type(2){
+
+        & p:nth-of-type(2) {
             text-align: right;
         }
     }
 }
 
 //----------------------------------------------------------  S E C T I O N __ S E R V I C E S
-section.services_container{
+section.services_container {
     padding: $padding/2;
-    box-shadow:10vw -.5vh 2px rgb(212, 212, 212);
-    @include display_flex(column,center,center);
-    //------------------------ Service Title
-    h1{
-    @extend %sections_title;
+    box-shadow: 10vw -.5vh 2px rgb(212, 212, 212);
+    @include display_flex(column, center, center);
+
+    //---------- Service Section Title
+    h1 {
+        @extend %sections_title;
     }
-    // -----------------Service N ° 1
-    div.service_1{
-        @include display_flex(column,center,center);
+
+    // ----------------------------------- Service N ° 1
+    div.service_1 {
+        @include display_flex(column, center, center);
         margin: $margin auto;
-        div.service_image{
+        box-shadow: 1px 1px 2px lightgray;
+
+        //  Div that contain Background Image
+        div.service_image {
             background-image: url("../Images/Images_For_Phone/service_1.jpg");
-            background-size:cover;
-            height: 60vh;
-            width: 100%;
-            @include display_flex(column,flex-end,flex-start);
+            @extend %services_div_image ;
+
             // Span containing service Number
-            span.service_number{
-                padding: $padding/2;
+            span.service_number {
+                @include display_flex(row, center, center);
+                @include font_size(1.25);
                 background-color: $bg_dark;
+                width: 17.5%;
+                height: 12%;
                 color: $light_color;
-                @include font_size(1.5);
+                text-align: center;
             }
         }
-        h2.service_title{
-            padding:$padding/1.75 0;
-            width:100%;
-            @include font_size(2);
-            @include font_weight(700);
+
+        // This Specific service Title
+        h2.service_title {
+            @extend %services_titles;
         }
-        p.service_explain{
+
+        // This Specific service content
+        p.service_explain {
             @include font_size(1.2);
-            padding:$padding/2.5 0;
+            padding: $padding/2.5 0;
             line-height: 4vh;
         }
     }
-    div.service_2{
-        @include display_flex(column,center,center);
+
+    // ---------------------------------  Service N ° 2
+    div.service_2 {
+        @include display_flex(column, center, center);
         margin: $margin auto;
-        div.service_image{
+        box-shadow: 1px 1px 2px lightgray;
+
+
+        // Div that contain Background Image
+        div.service_image {
             background-image: url("../Images/Images_For_Phone/service_2.jpg");
-            background-size:cover;
-            height: 60vh;
-            width: 100%;
-            @include display_flex(column,flex-end,flex-start);
+            @extend %services_div_image ;
+
+
             // Span containing service Number
-            span.service_number{
-                padding: $padding/2;
+            span.service_number {
+                @include display_flex(row, center, center);
+                @include font_size(1.25);
                 background-color: $bg_dark;
+                width: 17.5%;
+                height: 12%;
                 color: $light_color;
-                @include font_size(1.5);
+                text-align: center;
             }
         }
-        h2.service_title{
-            padding:$padding/1.75 0;
-            width:100%;
-            @include font_size(2);
-            @include font_weight(700);
+
+        // This Specific service Title
+        h2.service_title {
+            @extend %services_titles;
         }
-        p.service_explain{
+
+        // This Specific service content
+        p.service_explain {
             @include font_size(1.2);
-            padding:$padding/2.5 0;
+            padding: $padding/2.5 0;
             line-height: 4vh;
         }
     }
-    div.service_3{
-        @include display_flex(column,center,center);
+
+    // ---------------------------------  Service N ° 3
+    div.service_3 {
+        @include display_flex(column, center, center);
         margin: $margin auto;
-        div.service_image{
+        box-shadow: 1px 1px 2px lightgray;
+
+
+        // Div that contain Background Image
+        div.service_image {
             background-image: url("../Images/Images_For_Phone/service_3.jpg");
-            background-size:cover;
-            height: 60vh;
-            width: 100%;
-            @include display_flex(column,flex-end,flex-start);
+            @extend %services_div_image ;
+
             // Span containing service Number
-            span.service_number{
-                padding: $padding/2;
+            span.service_number {
+                @include display_flex(row, center, center);
+                @include font_size(1.25);
                 background-color: $bg_dark;
+                width: 17.5%;
+                height: 12%;
                 color: $light_color;
-                @include font_size(1.5);
+                text-align: center;
             }
         }
-        h2.service_title{
-            padding:$padding/1.75 0;
-            width:100%;
-            @include font_size(2);
-            @include font_weight(700);
+
+        // This Specific service Title
+        h2.service_title {
+            @extend %services_titles;
         }
-        p.service_explain{
+
+        // This Specific service content
+        p.service_explain {
             @include font_size(1.2);
-            padding:$padding/2.5 0;
+            padding: $padding/2.5 0;
             line-height: 4vh;
         }
     }
 }
 
+//----------------------------------------------------------  S E C T I O N _ C O N T A C T 
+
+section.contact {
+    @include display_flex(column, center, center);
+    padding: 0 $padding/2 $padding*2;
+    background-color: $bg_dark;
+
+    // ----------------- Div that contain the Form
+    div.contain_form {
+        background-color: $bg_light;
+        margin: $margin/3 auto;
+        width: 100%;
+
+        // Newletters heading 
+        h2.newsletters_heading {
+            color: $dark_color;
+            text-align: center;
+            text-transform: capitalize;
+            @include font_weight(200);
+            padding: $padding/3 0;
+        }
+
+        //----------  Form contact
+        & form {
+            @include display_flex(row, center, center);
+            flex-wrap: wrap;
+            padding: 0 $padding/3;
+
+            label {
+                @include font-weight(300);
+                text-align: center;
+                font-style: italic;
+                color: lighten($dark_color, 30%);
+            }
+
+            input[type="email"] {
+                width: 90%;
+                border: none;
+                outline: none;
+                border-bottom: 3px solid black;
+                // padding: $padding/3 0 $padding;
+                margin: 0 auto $margin;
+                @include font-size(1.05);
+
+                &:focus {
+                    @include font-size(1.2);
+                    background-color: lighten(lightgrey, 12.5%);
+                    transform: translateY(1vh);
+                    padding: $padding/2.5;
+                    transition: .5s;
+                }
+            }
+
+            input[type="submit"] {
+                font-style: italic;
+                padding: $padding/2.5 $padding/2;
+                @include font_weight(600);
+                @include font_size(1.25);
+                margin-left: auto;
+                min-width: 25%;
+                background: transparent;
+                border: none;
+            }
+
+            p.message_send_confirmation {
+                @include font_weight(300);
+                color: $dark_color;
+                width: 80%;
+                text-align: center;
+                padding: $padding/3 0;
+            }
+        }
+    }
+
+    // -----------------------  Div that contains logo and business NAME (display:none in phone)  -->
+    div.logo_and_bussiness_name {
+        border: 2px solid black;
+        display: none;
+
+        // Link containing Logo Image
+        a {
+
+            // Image of Logo
+            img {}
+        }
+
+        // Business Name
+        p {}
+    }
+
+    // ----------------------- Div that contains icons of partners -->
+
+    div.partner {
+        // Style of the container 
+        width: 100%;
+        padding: $padding/3 0;
+        background-color: $bg_dark;
+        margin: $margin/3 auto;
+
+        // Icons of Partners
+        i {
+            color: $light_color;
+            @include font_size(1.25);
+            margin: 0 $margin/5;
+        }
+    }
+
+    // ----------------------- Div that contains Informations like phone number, adress...  -->
+
+    div.information {
+        width: 90%;
+        color: $light_color;
+        line-height: 2.5vh;
+        @include font_size(.9);
+        @include font_weight(300);
+
+        p {
+            @include font_size(.85);
+        }
+
+        & p:nth-of-type(3) {
+            text-transform: capitalize;
+        }
+    }
+
+}
+
+//-------------------------------- Footer
+footer {
+    text-align: center;
+    padding: $padding 0;
+
+    h5 {
+        @include font_size(.9);
+        @include font_weight(500);
+    }
+}
+
+// Button that take to the Top of the Page
+
+button#topButton {
+    display: none;
+}

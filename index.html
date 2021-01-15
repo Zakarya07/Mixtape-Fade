@@ -9,7 +9,7 @@
             crossorigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="Css/main.css">
         <title>Fade Effect Project</title>
@@ -96,17 +96,16 @@
 
                 <!-- Contact Section Title -->
                 <h2 class="newsletters_heading">sign up to our newsletter</h2>
-
-                <!-- Contact Form -->
+                <!-----------Contact Form -->
                 <form action="test.php" method="POST">
-                    <label for="email">saississez votre adresse e-mail ici</label>
-                    <input type="email">
+                    <label for="">Saisissez votre adresse e-mail ici</label>
+                    <input type="email" required id="email" name="email">
                     <input type="submit" value="Envoyer">
                     <p class="message_send_confirmation">Merci pour votre envoi !</p>
                 </form>
 
             </div>
-            <!----------------------- Div that contains icons of partners -->
+            <!----------------------- Div that contains logo and business NAME (display:none in phone) -->
             <div class="logo_and_bussiness_name">
                 <a href=""><img src="Logos/logo.png" height="70px" alt="logo"></a>
                 <p id="bussiness_name">Mixtape</p>
@@ -121,24 +120,26 @@
 
             <!----------------------- Div that contains Informations like phone number, adress...  -->
             <div class="information">
-                <p id="information_email">zakarya.elkhattabi@gmail.com</p>
+                <p id="information_email">mixtape@info.com</p>
                 <p id="information_phone_number">Tel: 123-456-7890</p>
-                <p id="information_address">500 Lorem ipsum dolor, SF</p>
+                <p id="information_address">500 Busrad Folalem, SF</p>
             </div>
 
-            <!----------------- Footer -->
-            <footer>
-                <!-- Copyright Text -->
-                <h5 class="copy_right">
-                    &copy; 2021 by Mixtape.
-                </h5>
-                <h5 class="copy_right">
-                    All Right Reserved.
-                </h5>
-            </footer>
-
         </section>
-        <button type="button" id="topButton">^</button>
+
+        <!----------------- Footer -->
+        <footer>
+            <!-- Copyright Text -->
+            <h5 class="copy_right">
+                &copy; 2021 by Mixtape.
+            </h5>
+            <h5 class="copy_right">
+                All Right Reserved.
+            </h5>
+        </footer>
+
+        <!-- Button that take to the Top of the Page -->
+        <button type="button" id="topButton">TOP</button>
     </body>
 
 </html>

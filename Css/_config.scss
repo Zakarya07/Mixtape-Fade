@@ -6,7 +6,7 @@
 }
 
 @mixin font_weight ($weight_value) {
-    font-weight: $weight_value;
+    font-weight:$weight_value;
 }
 
 @mixin font_size ($sizeValue) {
@@ -17,4 +17,17 @@
     text-align: center;
     @include font_size(2.75);
     padding: $padding/2 0;
+    @include font_weight(600);
+}
+%services_titles {
+    padding: $padding/1.75 0;
+    width: 100%;
+    @include font_size(2);
+    @include font_weight(600);
+}
+%services_div_image {
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    @include display_flex(column, flex-end, flex-start);
 }
