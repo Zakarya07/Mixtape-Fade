@@ -1,7 +1,15 @@
+// Fonts
 $font_Poppins:'Poppins','sans-serif';
+// Colors
 $light_color:#fff;
 $dark_color:#131212;
+// Backgrounds
 $bg_light:$light_color;
 $bg_dark:$dark_color;
+// Spacing
 $padding:2em;
 $margin:2em;
+// Breakpoints
+$tablet:768px;
+$laptop:1024px;
+$desktop:1440px;

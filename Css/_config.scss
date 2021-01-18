@@ -13,6 +13,8 @@
     font-size:#{$sizeValue}em;
 }
 
+
+// ------------------- E X T E N D S-------------------
 %sections_title {
     text-align: center;
     @include font_size(2.75);
@@ -25,9 +27,31 @@
     @include font_size(2);
     @include font_weight(600);
 }
+
 %services_div_image {
     background-size: cover;
+    background-position: center;
     height: 60vh;
     width: 100%;
     @include display_flex(column, flex-end, flex-start);
+}
+
+//------------------------------------------------------------------ Media Queries
+// T A B L E T
+@mixin responsive_tablet() {
+    @media(min-width:#{$tablet}){
+        @content;
+    }
+}
+// L A P T O P
+@mixin responsive_laptop() {
+    @media(min-width:#{$laptop}){
+        @content;
+    }
+}
+// D E S K T O P
+@mixin responsive_desktop() {
+    @media(min-width:#{$desktop}){
+        @content;
+    }
 }

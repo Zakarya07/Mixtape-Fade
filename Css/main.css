@@ -14,6 +14,7 @@ section.services_container div.service_1 h2.service_title, section.services_cont
 
 section.services_container div.service_1 div.service_image, section.services_container div.service_2 div.service_image, section.services_container div.service_3 div.service_image {
   background-size: cover;
+  background-position: center;
   height: 60vh;
   width: 100%;
   display: -webkit-box;
@@ -62,6 +63,18 @@ header {
   padding: 0 1.33333em;
 }
 
+@media (min-width: 768px) {
+  header {
+    padding: 1.14286em 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    background-image: url("../Images/Images_For_Desktop/Header.jpg");
+  }
+}
+
 header nav {
   height: 10vh;
   width: 100%;
@@ -82,8 +95,10 @@ header nav {
           align-items: center;
 }
 
-header nav a {
-  height: 100%;
+@media (min-width: 768px) {
+  header nav {
+    padding: 0.5em 0.5em;
+  }
 }
 
 header nav span#logo_contain {
@@ -104,7 +119,11 @@ header nav span#logo_contain {
           align-items: center;
 }
 
-header nav span#logo_contain img {
+header nav span#logo_contain a {
+  height: 100%;
+}
+
+header nav span#logo_contain a img {
   height: 100%;
 }
 
@@ -113,6 +132,18 @@ header h1.header_title {
   text-align: center;
   font-size: 3.25em;
   font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  header h1.header_title {
+    font-size: 3.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  header h1.header_title {
+    font-size: 4em;
+  }
 }
 
 section.fade_section {
@@ -132,8 +163,33 @@ section.fade_section {
   padding: 0 1.33333em;
 }
 
+@media (min-width: 1024px) {
+  section.fade_section {
+    min-height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+  }
+}
+
 section.fade_section h1#fade_section_title {
   font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  section.fade_section h1#fade_section_title {
+    font-size: 3.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.fade_section h1#fade_section_title {
+    letter-spacing: 10px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+  }
 }
 
 section.fade_section div.image_container_fade_section {
@@ -146,9 +202,43 @@ section.fade_section div.image_container_fade_section {
   margin: 0 auto 2em;
 }
 
+@media (min-width: 768px) {
+  section.fade_section div.image_container_fade_section {
+    height: 75vh;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.fade_section div.image_container_fade_section {
+    width: 100%;
+    height: 90vh;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 5;
+    grid-column: 7/12;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+    background-image: url("../Images/Images_For_Desktop/Section_Fade.jpg");
+  }
+}
+
 section.fade_section div.fade_paragraph_container {
   width: 80%;
   margin: 0 auto 2em;
+}
+
+@media (min-width: 1024px) {
+  section.fade_section div.fade_paragraph_container {
+    width: auto;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-column: 2/6;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
 }
 
 section.fade_section div.fade_paragraph_container p {
@@ -159,6 +249,13 @@ section.fade_section div.fade_paragraph_container p {
   line-height: 4vh;
   padding: 0.66667em 0.66667em;
   margin: 0 auto 2em;
+}
+
+@media (min-width: 1024px) {
+  section.fade_section div.fade_paragraph_container p {
+    font-size: 1.25em;
+    line-height: 3.5vh;
+  }
 }
 
 section.fade_section div.fade_paragraph_container p:nth-of-type(1) {
@@ -188,6 +285,32 @@ section.services_container {
           align-items: center;
 }
 
+@media (min-width: 768px) {
+  section.services_container {
+    padding: 1.33333em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.services_container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  section.services_container h1 {
+    text-align: center;
+    letter-spacing: 10px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+    font-size: 3.5em;
+  }
+}
+
 section.services_container div.service_1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,8 +330,31 @@ section.services_container div.service_1 {
           box-shadow: 1px 1px 2px lightgray;
 }
 
+@media (min-width: 1024px) {
+  section.services_container div.service_1 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    height: 98vh;
+    margin-right: .5vw;
+  }
+}
+
 section.services_container div.service_1 div.service_image {
   background-image: url("../Images/Images_For_Phone/service_1.jpg");
+}
+
+@media (min-width: 768px) {
+  section.services_container div.service_1 div.service_image {
+    height: 95vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_1 div.service_image {
+    height: 100%;
+    background-image: url("../Images/Images_For_Desktop/service_1.jpg");
+  }
 }
 
 section.services_container div.service_1 div.service_image span.service_number {
@@ -227,16 +373,45 @@ section.services_container div.service_1 div.service_image span.service_number {
           align-items: center;
   font-size: 1.25em;
   background-color: #131212;
-  width: 17.5%;
-  height: 12%;
+  width: 16.5vw;
+  height: 7.5vh;
   color: #fff;
   text-align: center;
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_1 div.service_image span.service_number {
+    height: 9vh;
+    width: 7.5vw;
+    font-weight: 300;
+  }
+}
+
+@media (min-width: 768px) {
+  section.services_container div.service_1 h2.service_title {
+    font-size: 2.25em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_1 h2.service_title {
+    font-size: 1.75em;
+    font-weight: 500;
+    padding: 0.66667em 0;
+  }
 }
 
 section.services_container div.service_1 p.service_explain {
   font-size: 1.2em;
   padding: 0.8em 0;
   line-height: 4vh;
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_1 p.service_explain {
+    font-size: 1.1em;
+    height: 15%;
+  }
 }
 
 section.services_container div.service_2 {
@@ -258,8 +433,31 @@ section.services_container div.service_2 {
           box-shadow: 1px 1px 2px lightgray;
 }
 
+@media (min-width: 1024px) {
+  section.services_container div.service_2 {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 6;
+    grid-column: 7/13;
+    height: 98vh;
+    margin-left: .5vw;
+  }
+}
+
 section.services_container div.service_2 div.service_image {
   background-image: url("../Images/Images_For_Phone/service_2.jpg");
+}
+
+@media (min-width: 768px) {
+  section.services_container div.service_2 div.service_image {
+    height: 95vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_2 div.service_image {
+    height: 100%;
+    background-image: url("../Images/Images_For_Desktop/service_2.jpg");
+  }
 }
 
 section.services_container div.service_2 div.service_image span.service_number {
@@ -278,16 +476,45 @@ section.services_container div.service_2 div.service_image span.service_number {
           align-items: center;
   font-size: 1.25em;
   background-color: #131212;
-  width: 17.5%;
-  height: 12%;
+  width: 16.5vw;
+  height: 7.5vh;
   color: #fff;
   text-align: center;
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_2 div.service_image span.service_number {
+    height: 9vh;
+    width: 7.5vw;
+    font-weight: 300;
+  }
+}
+
+@media (min-width: 768px) {
+  section.services_container div.service_2 h2.service_title {
+    font-size: 2.25em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_2 h2.service_title {
+    font-size: 1.75em;
+    font-weight: 500;
+    padding: 0.66667em 0;
+  }
 }
 
 section.services_container div.service_2 p.service_explain {
   font-size: 1.2em;
   padding: 0.8em 0;
   line-height: 4vh;
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_2 p.service_explain {
+    font-size: 1.1em;
+    height: 15%;
+  }
 }
 
 section.services_container div.service_3 {
@@ -309,8 +536,30 @@ section.services_container div.service_3 {
           box-shadow: 1px 1px 2px lightgray;
 }
 
+@media (min-width: 1024px) {
+  section.services_container div.service_3 {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 6;
+    grid-column: 4/10;
+    height: 97.5vh;
+  }
+}
+
 section.services_container div.service_3 div.service_image {
   background-image: url("../Images/Images_For_Phone/service_3.jpg");
+}
+
+@media (min-width: 768px) {
+  section.services_container div.service_3 div.service_image {
+    height: 95vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_3 div.service_image {
+    height: 100%;
+    background-image: url("../Images/Images_For_Desktop/service_3.jpg");
+  }
 }
 
 section.services_container div.service_3 div.service_image span.service_number {
@@ -329,16 +578,51 @@ section.services_container div.service_3 div.service_image span.service_number {
           align-items: center;
   font-size: 1.25em;
   background-color: #131212;
-  width: 17.5%;
-  height: 12%;
+  width: 16.5vw;
+  height: 7.5vh;
   color: #fff;
   text-align: center;
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_3 div.service_image span.service_number {
+    height: 9vh;
+    width: 7.5vw;
+    font-weight: 300;
+  }
+}
+
+@media (min-width: 768px) {
+  section.services_container div.service_3 h2.service_title {
+    font-size: 2.25em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_3 h2.service_title {
+    font-size: 1.75em;
+    font-weight: 500;
+    padding: 0.66667em 0;
+  }
 }
 
 section.services_container div.service_3 p.service_explain {
   font-size: 1.2em;
   padding: 0.8em 0;
   line-height: 4vh;
+}
+
+section.services_container div.service_3 p.service_explain {
+  font-size: 1.2em;
+  padding: 0.8em 0;
+  line-height: 4vh;
+}
+
+@media (min-width: 1024px) {
+  section.services_container div.service_3 p.service_explain {
+    font-size: 1.1em;
+    height: 15%;
+  }
 }
 
 section.contact {
@@ -371,6 +655,18 @@ section.contact div.contain_form h2.newsletters_heading {
   text-transform: capitalize;
   font-weight: 200;
   padding: 0.66667em 0;
+}
+
+@media (min-width: 768px) {
+  section.contact div.contain_form h2.newsletters_heading {
+    font-size: 1.75em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.contact div.contain_form h2.newsletters_heading {
+    font-size: 2em;
+  }
 }
 
 section.contact div.contain_form form {
@@ -427,6 +723,18 @@ section.contact div.contain_form form input[type="submit"] {
   min-width: 25%;
   background: transparent;
   border: none;
+  -webkit-transition: background-color .5s .15s, color 2s;
+  transition: background-color .5s .15s, color 2s;
+}
+
+@media (min-width: 1024px) {
+  section.contact div.contain_form form input[type="submit"]:hover {
+    background-color: #131212;
+    color: #fff;
+  }
+  section.contact div.contain_form form input[type="submit"]:focus {
+    outline: none;
+  }
 }
 
 section.contact div.contain_form form p.message_send_confirmation {
@@ -442,20 +750,60 @@ section.contact div.logo_and_bussiness_name {
   display: none;
 }
 
-section.contact div.partner {
+section.contact div.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+@media (min-width: 768px) {
+  section.contact div.grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+}
+
+section.contact div.grid div.partner {
   width: 100%;
   padding: 0.66667em 0;
   background-color: #131212;
   margin: 0.66667em auto;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
 }
 
-section.contact div.partner i {
+@media (min-width: 768px) {
+  section.contact div.grid div.partner {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 0px 7.5px 2.5px -7.5px #dfd6d6;
+            box-shadow: 0px 7.5px 2.5px -7.5px #dfd6d6;
+  }
+}
+
+section.contact div.grid div.partner i {
   color: #fff;
   font-size: 1.25em;
   margin: 0 0.4em;
 }
 
-section.contact div.information {
+section.contact div.grid div.information {
   width: 90%;
   color: #fff;
   line-height: 2.5vh;
@@ -463,11 +811,44 @@ section.contact div.information {
   font-weight: 300;
 }
 
-section.contact div.information p {
+@media (min-width: 768px) {
+  section.contact div.grid div.information {
+    width: auto;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+section.contact div.grid div.information p {
   font-size: 0.85em;
 }
 
-section.contact div.information p:nth-of-type(3) {
+@media (min-width: 768px) {
+  section.contact div.grid div.information p {
+    font-size: 0.95em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section.contact div.grid div.information p {
+    font-size: 1.05em;
+  }
+}
+
+section.contact div.grid div.information p:nth-of-type(3) {
   text-transform: capitalize;
 }
 
@@ -476,9 +857,40 @@ footer {
   padding: 2em 0;
 }
 
+@media (min-width: 768px) {
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 footer h5 {
   font-size: 0.9em;
   font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  footer h5 {
+    font-size: 1.25em;
+    font-weight: 400;
+  }
+}
+
+@media (min-width: 768px) {
+  footer h5:nth-of-type(2) {
+    padding-left: .5vw;
+  }
 }
 
 button#topButton {

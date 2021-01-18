@@ -28,6 +28,13 @@ header {
     justify-content: center;
     padding: 0 $padding/1.5;
 
+    @include responsive_tablet() {
+        padding: $padding/1.75 0;
+    }
+    @include responsive_laptop() {
+        background-image: url("../Images/Images_For_Desktop/Header.jpg");
+    }
+
     //----------------------------------- NavBar
     nav {
         height: 10vh;
@@ -36,17 +43,24 @@ header {
         background: transparent;
         @include display_flex(row, flex-start, center);
 
-        & a {
-            height: 100%;
+        @include responsive_tablet() {
+            padding: $padding/4 $padding/4;
         }
 
+        // SPan element that contain the Image LOGO
         span#logo_contain {
             width: 20%;
             height: 100%;
             @include display_flex(row, center, center);
 
-            & img {
+            // Logo Image
+            // <a> tag that contain the SPAN and the LOGO image
+            & a {
                 height: 100%;
+
+                img {
+                    height: 100%;
+                }
             }
         }
     }
@@ -57,6 +71,14 @@ header {
         text-align: center;
         @include font_size(3.25);
         @include font_weight(600);
+
+        @include responsive_tablet() {
+            @include font_size(3.5);
+        }
+
+        @include responsive_laptop() {
+            @include font_size(4);
+        }
     }
 }
 
@@ -65,10 +87,24 @@ section.fade_section {
     @include display_flex(column, unset, center);
     padding: 0 $padding/1.5;
 
+    @include responsive_laptop() {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
     // --------------------- h1 Title of Fade Section
     h1#fade_section_title {
         @extend %sections_title;
         @include font_weight(500);
+
+        @include responsive_tablet() {
+            @include font_size(3.5);
+        }
+        @include responsive_laptop() {
+            letter-spacing: 10px;
+            grid-column: 1/13;
+        }
     }
 
     //  Div that contain Background Image
@@ -80,11 +116,32 @@ section.fade_section {
         background-position: center bottom;
         background-repeat: no-repeat;
         margin: 0 auto $margin;
+
+        @include responsive_tablet() {
+            height: 75vh;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        @include responsive_laptop() {
+            width: 100%;
+            height: 90vh;
+            grid-column: 7/12;
+            grid-row: 2/4;
+            background-image: url("../Images/Images_For_Desktop/Section_Fade.jpg");
+        }
+
     }
 
     div.fade_paragraph_container {
         width: 80%;
         margin: 0 auto $margin;
+
+        @include responsive_laptop() {
+            width: auto;
+            grid-column: 2/6;
+            grid-row: 3/4;
+        }
 
         // Paragraphs 
         p {
@@ -95,6 +152,11 @@ section.fade_section {
             line-height: 4vh;
             padding: $padding/3 $padding/3;
             margin: 0 auto $margin;
+
+            @include responsive_laptop() {
+                @include font_size(1.25);
+                line-height: 3.5vh;
+            }
         }
 
         & p:nth-of-type(1) {
@@ -107,43 +169,90 @@ section.fade_section {
     }
 }
 
-//----------------------------------------------------------  S E C T I O N __ S E R V I C E S
+//----------------------------------------------------------------------- S E C T I O N __ S E R V I C E S
 section.services_container {
     padding: $padding/2;
     box-shadow: 10vw -.5vh 2px rgb(212, 212, 212);
     @include display_flex(column, center, center);
 
+    @include responsive_tablet() {
+        padding: $padding/1.5;
+    }
+
+    @include responsive_laptop() {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+    }
+
     //---------- Service Section Title
     h1 {
         @extend %sections_title;
+
+        @include responsive_laptop() {
+            text-align: center;
+            letter-spacing: 10px;
+            grid-column: 1/13;
+            @include font_size(3.5);
+        }
     }
 
-    // ----------------------------------- Service N ° 1
+    // ---------------------------------------------------- Service N ° 1
     div.service_1 {
         @include display_flex(column, center, center);
         margin: $margin auto;
         box-shadow: 1px 1px 2px lightgray;
+        
+
+        @include responsive_laptop() {
+            grid-column: 1/7;
+            height: 98vh;
+            margin-right: .5vw;
+        }
 
         //  Div that contain Background Image
         div.service_image {
             background-image: url("../Images/Images_For_Phone/service_1.jpg");
-            @extend %services_div_image ;
+            @extend %services_div_image;
 
+            @include responsive_tablet() {
+                height: 95vh;
+            }
+            @include responsive_laptop() {
+                height: 100%;
+                background-image: url("../Images/Images_For_Desktop/service_1.jpg");
+                        }
             // Span containing service Number
             span.service_number {
                 @include display_flex(row, center, center);
                 @include font_size(1.25);
                 background-color: $bg_dark;
-                width: 17.5%;
-                height: 12%;
+                width: 16.5vw;
+                height: 7.5vh;
                 color: $light_color;
                 text-align: center;
+
+                @include responsive_laptop() {
+                    height: 9vh;
+                    width: 7.5vw;
+                    @include font-weight(300);
+                }
             }
         }
 
         // This Specific service Title
         h2.service_title {
             @extend %services_titles;
+
+            @include responsive_tablet() {
+                @include font_size(2.25);
+            }
+
+            @include responsive_laptop() {
+                @include font_size(1.75);
+                @include font_weight(500);
+                padding: $padding/3 0;
+            }
         }
 
         // This Specific service content
@@ -151,37 +260,70 @@ section.services_container {
             @include font_size(1.2);
             padding: $padding/2.5 0;
             line-height: 4vh;
+
+            @include responsive_laptop() {
+                @include font_size(1.1);
+                height: 15%;
+            }
         }
     }
 
-    // ---------------------------------  Service N ° 2
+    // -----------------------------------------------  Service N ° 2
     div.service_2 {
         @include display_flex(column, center, center);
         margin: $margin auto;
         box-shadow: 1px 1px 2px lightgray;
-
-
+    
+        @include responsive_laptop() {
+            grid-column: 7/13;
+            height: 98vh;
+            margin-left: .5vw;
+        }
         // Div that contain Background Image
         div.service_image {
             background-image: url("../Images/Images_For_Phone/service_2.jpg");
-            @extend %services_div_image ;
+            @extend %services_div_image;
 
+            @include responsive_tablet() {
+                height: 95vh;
+            }
+
+            @include responsive_laptop() {
+                height: 100%;
+                background-image: url("../Images/Images_For_Desktop/service_2.jpg");       
+            }
 
             // Span containing service Number
             span.service_number {
                 @include display_flex(row, center, center);
                 @include font_size(1.25);
                 background-color: $bg_dark;
-                width: 17.5%;
-                height: 12%;
+                width: 16.5vw;
+                height: 7.5vh;
                 color: $light_color;
                 text-align: center;
+
+                @include responsive_laptop() {
+                    height: 9vh;
+                    width: 7.5vw;
+                    @include font-weight(300);
+                }
             }
         }
 
         // This Specific service Title
         h2.service_title {
             @extend %services_titles;
+
+            @include responsive_tablet() {
+                @include font_size(2.25);
+            }
+
+            @include responsive_laptop() {
+                @include font_size(1.75);
+                @include font_weight(500);
+                padding: $padding/3 0;
+            }
         }
 
         // This Specific service content
@@ -189,36 +331,71 @@ section.services_container {
             @include font_size(1.2);
             padding: $padding/2.5 0;
             line-height: 4vh;
+
+            @include responsive_laptop() {
+                @include font_size(1.1);
+                height: 15%;
+            }
         }
     }
 
-    // ---------------------------------  Service N ° 3
+    // ------------------------------------------------  Service N ° 3
     div.service_3 {
         @include display_flex(column, center, center);
         margin: $margin auto;
         box-shadow: 1px 1px 2px lightgray;
 
+        @include responsive_laptop() {
+            grid-column: 4/10;
+            height: 97.5vh;
+        }
+
 
         // Div that contain Background Image
         div.service_image {
             background-image: url("../Images/Images_For_Phone/service_3.jpg");
-            @extend %services_div_image ;
+            @extend %services_div_image;
+
+            @include responsive_tablet() {
+                height: 95vh;
+            }
+
+            @include responsive_laptop() {
+                height: 100%;
+                background-image: url("../Images/Images_For_Desktop/service_3.jpg");       
+            }
 
             // Span containing service Number
             span.service_number {
                 @include display_flex(row, center, center);
                 @include font_size(1.25);
                 background-color: $bg_dark;
-                width: 17.5%;
-                height: 12%;
+                width: 16.5vw;
+                height: 7.5vh;
                 color: $light_color;
                 text-align: center;
+
+                @include responsive_laptop() {
+                    height: 9vh;
+                    width: 7.5vw;
+                    @include font-weight(300);
+                }
             }
         }
 
         // This Specific service Title
         h2.service_title {
             @extend %services_titles;
+
+            @include responsive_tablet() {
+                @include font_size(2.25);
+            }
+
+            @include responsive_laptop() {
+                @include font_size(1.75);
+                @include font_weight(500);
+                padding: $padding/3 0;
+            }
         }
 
         // This Specific service content
@@ -227,6 +404,18 @@ section.services_container {
             padding: $padding/2.5 0;
             line-height: 4vh;
         }
+
+        p.service_explain {
+            @include font_size(1.2);
+            padding: $padding/2.5 0;
+            line-height: 4vh;
+
+            @include responsive_laptop() {
+                @include font_size(1.1);
+                height: 15%;
+            }
+        }
+
     }
 }
 
@@ -250,6 +439,12 @@ section.contact {
             text-transform: capitalize;
             @include font_weight(200);
             padding: $padding/3 0;
+            @include responsive_tablet() {
+                @include font_size(1.75);
+            }
+            @include responsive_laptop(){
+                @include font_size(2);
+            }
         }
 
         //----------  Form contact
@@ -292,6 +487,16 @@ section.contact {
                 min-width: 25%;
                 background: transparent;
                 border: none;
+                transition:background-color .5s .15s, color 2s;
+                @include responsive_laptop(){
+                    &:hover{
+                        background-color: $bg_dark;
+                        color: $light_color;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
             }
 
             p.message_send_confirmation {
@@ -320,41 +525,69 @@ section.contact {
         p {}
     }
 
-    // ----------------------- Div that contains icons of partners -->
+    div.grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
 
-    div.partner {
-        // Style of the container 
-        width: 100%;
-        padding: $padding/3 0;
-        background-color: $bg_dark;
-        margin: $margin/3 auto;
+        @include responsive_tablet() {
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+        }
 
-        // Icons of Partners
-        i {
+        div.partner {
+            // Style of the container 
+            width: 100%;
+            padding: $padding/3 0;
+            background-color: $bg_dark;
+            margin: $margin/3 auto;
+            grid-column: 1/5;
+
+            @include responsive_tablet() {
+                grid-column: 1/2;
+                @include display_flex(row, space-around, center);
+                box-shadow: 0px 7.5px 2.5px -7.5px rgb(223, 214, 214);
+            }
+
+            // Icons of Partners
+            i {
+                color: $light_color;
+                @include font_size(1.25);
+                margin: 0 $margin/5;
+            }
+        }
+
+        // ----------------------- Div that contains Informations like phone number, adress...  -->
+        div.information {
+            width: 90%;
             color: $light_color;
-            @include font_size(1.25);
-            margin: 0 $margin/5;
+            line-height: 2.5vh;
+            @include font_size(.9);
+            @include font_weight(300);
+
+            @include responsive_tablet() {
+                width: auto;
+                grid-column: 2/4;
+                @include display_flex(row, space-around, center);
+            }
+
+            p {
+                @include font_size(.85);
+
+                @include responsive_tablet() {
+                    @include font_size(.95);
+                }
+                @include responsive_laptop() {
+                    @include font_size(1.05);
+                }
+            }
+
+            & p:nth-of-type(3) {
+                text-transform: capitalize;
+            }
         }
     }
 
-    // ----------------------- Div that contains Informations like phone number, adress...  -->
-
-    div.information {
-        width: 90%;
-        color: $light_color;
-        line-height: 2.5vh;
-        @include font_size(.9);
-        @include font_weight(300);
-
-        p {
-            @include font_size(.85);
-        }
-
-        & p:nth-of-type(3) {
-            text-transform: capitalize;
-        }
-    }
-
+    // ----------------------- Div that contains icons of partners -->
 }
 
 //-------------------------------- Footer
@@ -362,14 +595,31 @@ footer {
     text-align: center;
     padding: $padding 0;
 
+    @include responsive_tablet() {
+        @include display_flex(row, center, center);
+    }
+
     h5 {
         @include font_size(.9);
         @include font_weight(500);
+
+        @include responsive_tablet() {
+            @include font_size(1.25);
+            @include font_weight(400);
+        }
     }
+
+    h5:nth-of-type(2) {
+        @include responsive_tablet() {
+            padding-left: .5vw;
+        }
+    }
+
+
+
 }
 
-// Button that take to the Top of the Page
-
+//-------------------------------- Button that take to the Top of the Page
 button#topButton {
     display: none;
 }
