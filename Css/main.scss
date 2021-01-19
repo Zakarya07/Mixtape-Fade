@@ -11,6 +11,12 @@
 
 html {
     scroll-behavior: smooth;
+    @include responsive_desktop{
+        scroll-behavior: smooth;
+    }
+    @include responsive_laptop{
+        scroll-behavior: smooth;
+    }
 }
 
 body {
@@ -31,6 +37,7 @@ header {
     @include responsive_tablet() {
         padding: $padding/1.75 0;
     }
+
     @include responsive_laptop() {
         background-image: url("../Images/Images_For_Desktop/Header.jpg");
     }
@@ -60,6 +67,10 @@ header {
 
                 img {
                     height: 100%;
+
+                    @include responsive_desktop() {
+                        filter: hue-rotate(40deg);
+                    }
                 }
             }
         }
@@ -79,6 +90,10 @@ header {
         @include responsive_laptop() {
             @include font_size(4);
         }
+
+        @include responsive_desktop() {
+            @include font_size(5);
+        }
     }
 }
 
@@ -91,6 +106,7 @@ section.fade_section {
         min-height: 100vh;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 20vh repeat(4, 33vh);
     }
 
     // --------------------- h1 Title of Fade Section
@@ -101,9 +117,14 @@ section.fade_section {
         @include responsive_tablet() {
             @include font_size(3.5);
         }
+
         @include responsive_laptop() {
             letter-spacing: 10px;
             grid-column: 1/13;
+        }
+
+        @include responsive_desktop {
+            @include font_size(4);
         }
     }
 
@@ -124,11 +145,16 @@ section.fade_section {
         }
 
         @include responsive_laptop() {
+            background-image: url("../Images/Images_For_Desktop/Section_Fade.jpg");
             width: 100%;
             height: 90vh;
             grid-column: 7/12;
-            grid-row: 2/4;
-            background-image: url("../Images/Images_For_Desktop/Section_Fade.jpg");
+            grid-row: 3/5;
+            align-self: flex-end;
+        }
+
+        @include responsive_desktop {
+            align-self: center;
         }
 
     }
@@ -140,7 +166,7 @@ section.fade_section {
         @include responsive_laptop() {
             width: auto;
             grid-column: 2/6;
-            grid-row: 3/4;
+            grid-row: 3/5;
         }
 
         // Paragraphs 
@@ -156,6 +182,14 @@ section.fade_section {
             @include responsive_laptop() {
                 @include font_size(1.25);
                 line-height: 3.5vh;
+                margin: 0;
+            }
+
+            @include responsive_desktop() {
+                @include font_size(1.5);
+                line-height: 3.5vh;
+                margin: $margin 0;
+                line-height: 4vh;
             }
         }
 
@@ -182,7 +216,6 @@ section.services_container {
     @include responsive_laptop() {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-
     }
 
     //---------- Service Section Title
@@ -195,6 +228,10 @@ section.services_container {
             grid-column: 1/13;
             @include font_size(3.5);
         }
+
+        @include responsive_desktop {
+            @include font_size(4);
+        }
     }
 
     // ---------------------------------------------------- Service N ° 1
@@ -202,12 +239,17 @@ section.services_container {
         @include display_flex(column, center, center);
         margin: $margin auto;
         box-shadow: 1px 1px 2px lightgray;
-        
 
         @include responsive_laptop() {
             grid-column: 1/7;
             height: 98vh;
             margin-right: .5vw;
+        }
+
+        @include responsive_desktop() {
+            grid-column: 1/5;
+            width: 92.5%;
+            margin: 0;
         }
 
         //  Div that contain Background Image
@@ -218,10 +260,12 @@ section.services_container {
             @include responsive_tablet() {
                 height: 95vh;
             }
+
             @include responsive_laptop() {
                 height: 100%;
                 background-image: url("../Images/Images_For_Desktop/service_1.jpg");
-                        }
+            }
+
             // Span containing service Number
             span.service_number {
                 @include display_flex(row, center, center);
@@ -235,6 +279,12 @@ section.services_container {
                 @include responsive_laptop() {
                     height: 9vh;
                     width: 7.5vw;
+                    @include font-weight(300);
+                }
+
+                @include responsive_desktop() {
+                    height: 9vh;
+                    width: 5vw;
                     @include font-weight(300);
                 }
             }
@@ -253,6 +303,11 @@ section.services_container {
                 @include font_weight(500);
                 padding: $padding/3 0;
             }
+
+            @include responsive_desktop {
+                @include font_size(1.5);
+                padding: $padding/5;
+            }
         }
 
         // This Specific service content
@@ -265,20 +320,33 @@ section.services_container {
                 @include font_size(1.1);
                 height: 15%;
             }
+
+            @include responsive_desktop() {
+                @include font_size(1);
+                height: 20%;
+            }
         }
     }
 
-    // -----------------------------------------------  Service N ° 2
+    // ------------------------------------------------------  Service N ° 2
     div.service_2 {
         @include display_flex(column, center, center);
         margin: $margin auto;
         box-shadow: 1px 1px 2px lightgray;
-    
+
         @include responsive_laptop() {
             grid-column: 7/13;
             height: 98vh;
             margin-left: .5vw;
         }
+
+        @include responsive_desktop() {
+            grid-column: 5/9;
+            margin: 0;
+            width: 92.5%;
+            justify-self: center;
+        }
+
         // Div that contain Background Image
         div.service_image {
             background-image: url("../Images/Images_For_Phone/service_2.jpg");
@@ -290,7 +358,7 @@ section.services_container {
 
             @include responsive_laptop() {
                 height: 100%;
-                background-image: url("../Images/Images_For_Desktop/service_2.jpg");       
+                background-image: url("../Images/Images_For_Desktop/service_2.jpg");
             }
 
             // Span containing service Number
@@ -306,6 +374,12 @@ section.services_container {
                 @include responsive_laptop() {
                     height: 9vh;
                     width: 7.5vw;
+                    @include font-weight(300);
+                }
+
+                @include responsive_desktop() {
+                    height: 9vh;
+                    width: 5vw;
                     @include font-weight(300);
                 }
             }
@@ -324,6 +398,11 @@ section.services_container {
                 @include font_weight(500);
                 padding: $padding/3 0;
             }
+
+            @include responsive_desktop {
+                @include font_size(1.5);
+                padding: $padding/5;
+            }
         }
 
         // This Specific service content
@@ -336,6 +415,11 @@ section.services_container {
                 @include font_size(1.1);
                 height: 15%;
             }
+
+            @include responsive_desktop() {
+                @include font_size(1);
+                height: 20%;
+            }
         }
     }
 
@@ -346,10 +430,18 @@ section.services_container {
         box-shadow: 1px 1px 2px lightgray;
 
         @include responsive_laptop() {
-            grid-column: 4/10;
             height: 97.5vh;
+            grid-column: 4/10;
+
         }
 
+        @include responsive_desktop() {
+            height: 98vh;
+            width: 92.5%;
+            margin: 0;
+            grid-column: 9/13;
+            justify-self: flex-end;
+        }
 
         // Div that contain Background Image
         div.service_image {
@@ -362,7 +454,7 @@ section.services_container {
 
             @include responsive_laptop() {
                 height: 100%;
-                background-image: url("../Images/Images_For_Desktop/service_3.jpg");       
+                background-image: url("../Images/Images_For_Desktop/service_3.jpg");
             }
 
             // Span containing service Number
@@ -378,6 +470,12 @@ section.services_container {
                 @include responsive_laptop() {
                     height: 9vh;
                     width: 7.5vw;
+                    @include font-weight(300);
+                }
+
+                @include responsive_desktop() {
+                    height: 9vh;
+                    width: 5vw;
                     @include font-weight(300);
                 }
             }
@@ -396,15 +494,14 @@ section.services_container {
                 @include font_weight(500);
                 padding: $padding/3 0;
             }
+
+            @include responsive_desktop {
+                @include font_size(1.5);
+                padding: $padding/5;
+            }
         }
 
         // This Specific service content
-        p.service_explain {
-            @include font_size(1.2);
-            padding: $padding/2.5 0;
-            line-height: 4vh;
-        }
-
         p.service_explain {
             @include font_size(1.2);
             padding: $padding/2.5 0;
@@ -413,6 +510,11 @@ section.services_container {
             @include responsive_laptop() {
                 @include font_size(1.1);
                 height: 15%;
+            }
+
+            @include responsive_desktop() {
+                @include font_size(1);
+                height: 20%;
             }
         }
 
@@ -426,11 +528,21 @@ section.contact {
     padding: 0 $padding/2 $padding*2;
     background-color: $bg_dark;
 
+    @include responsive_desktop() {
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        padding: $padding $padding/2;
+    }
+
     // ----------------- Div that contain the Form
     div.contain_form {
         background-color: $bg_light;
         margin: $margin/3 auto;
         width: 100%;
+
+        @include responsive_desktop() {
+            grid-column: 9/16;
+        }
 
         // Newletters heading 
         h2.newsletters_heading {
@@ -439,10 +551,12 @@ section.contact {
             text-transform: capitalize;
             @include font_weight(200);
             padding: $padding/3 0;
+
             @include responsive_tablet() {
                 @include font_size(1.75);
             }
-            @include responsive_laptop(){
+
+            @include responsive_laptop() {
                 @include font_size(2);
             }
         }
@@ -487,13 +601,15 @@ section.contact {
                 min-width: 25%;
                 background: transparent;
                 border: none;
-                transition:background-color .5s .15s, color 2s;
-                @include responsive_laptop(){
-                    &:hover{
+                transition: background-color .5s .15s, color 2s;
+
+                @include responsive_laptop() {
+                    &:hover {
                         background-color: $bg_dark;
                         color: $light_color;
                     }
-                    &:focus{
+
+                    &:focus {
                         outline: none;
                     }
                 }
@@ -511,18 +627,34 @@ section.contact {
 
     // -----------------------  Div that contains logo and business NAME (display:none in phone)  -->
     div.logo_and_bussiness_name {
-        border: 2px solid black;
         display: none;
+
+        @include responsive_desktop() {
+            display: block;
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
 
         // Link containing Logo Image
         a {
 
             // Image of Logo
-            img {}
+            img {
+                @include responsive_desktop() {
+                  height:7.5vh;
+                  filter: hue-rotate(40deg);
+                }
+            }
         }
 
         // Business Name
-        p {}
+        p {
+            @include responsive_desktop{
+                @include font_size(1.75);
+                @include font-weight(600);
+                color: $light_color;
+            }
+        }
     }
 
     div.grid {
@@ -532,6 +664,14 @@ section.contact {
         @include responsive_tablet() {
             grid-template-columns: repeat(3, 1fr);
             width: 100%;
+        }
+
+        @include responsive_desktop {
+            grid-column: 5/7;
+            grid-row: 1/2;
+            height: 90%;
+            @include display_flex(column,center,center);
+            justify-content: space-around;
         }
 
         div.partner {
@@ -547,12 +687,32 @@ section.contact {
                 @include display_flex(row, space-around, center);
                 box-shadow: 0px 7.5px 2.5px -7.5px rgb(223, 214, 214);
             }
-
+            @include responsive_desktop{
+                transition: box-shadow 1s;
+                &:hover{
+                    box-shadow: 0px 7.5px 25px -17.5px rgb(253, 253, 188),0px -7.5px 2.5px -7.5px rgb(253, 253, 188);
+                }
+            }
+            @include responsive_desktop {
+                align-self: center;
+            }
             // Icons of Partners
             i {
                 color: $light_color;
                 @include font_size(1.25);
                 margin: 0 $margin/5;
+                @include responsive_desktop{
+                    border: 0px solid transparent;
+                    transition: transform .5s linear, padding .5s, border 2s ease-out;
+                }
+                @include responsive_desktop {
+                    &:hover{
+                        transform: scale(1.25);
+                        padding: $padding/6;
+                        border: 1px solid $light_color;
+                        background-color:darken($bg_dark,20%);
+                    }
+                }
             }
         }
 
@@ -569,6 +729,9 @@ section.contact {
                 grid-column: 2/4;
                 @include display_flex(row, space-around, center);
             }
+            @include responsive_desktop {
+                @include display_flex(column,center, center);
+            }
 
             p {
                 @include font_size(.85);
@@ -576,8 +739,13 @@ section.contact {
                 @include responsive_tablet() {
                     @include font_size(.95);
                 }
+
                 @include responsive_laptop() {
                     @include font_size(1.05);
+                }
+
+                @include responsive_desktop {
+                        @include font-size(.95);
                 }
             }
 
@@ -614,9 +782,6 @@ footer {
             padding-left: .5vw;
         }
     }
-
-
-
 }
 
 //-------------------------------- Button that take to the Top of the Page

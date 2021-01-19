@@ -43,6 +43,18 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (min-width: 1440px) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   font-family: "Poppins", "sans-serif";
 }
@@ -127,6 +139,13 @@ header nav span#logo_contain a img {
   height: 100%;
 }
 
+@media (min-width: 1440px) {
+  header nav span#logo_contain a img {
+    -webkit-filter: hue-rotate(40deg);
+            filter: hue-rotate(40deg);
+  }
+}
+
 header h1.header_title {
   color: #fff;
   text-align: center;
@@ -143,6 +162,12 @@ header h1.header_title {
 @media (min-width: 1024px) {
   header h1.header_title {
     font-size: 4em;
+  }
+}
+
+@media (min-width: 1440px) {
+  header h1.header_title {
+    font-size: 5em;
   }
 }
 
@@ -170,6 +195,8 @@ section.fade_section {
     display: grid;
     -ms-grid-columns: (1fr)[12];
         grid-template-columns: repeat(12, 1fr);
+    -ms-grid-rows: 20vh (33vh)[4];
+        grid-template-rows: 20vh repeat(4, 33vh);
   }
 }
 
@@ -189,6 +216,12 @@ section.fade_section h1#fade_section_title {
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-column: 1/13;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.fade_section h1#fade_section_title {
+    font-size: 4em;
   }
 }
 
@@ -212,15 +245,25 @@ section.fade_section div.image_container_fade_section {
 
 @media (min-width: 1024px) {
   section.fade_section div.image_container_fade_section {
+    background-image: url("../Images/Images_For_Desktop/Section_Fade.jpg");
     width: 100%;
     height: 90vh;
     -ms-grid-column: 7;
     -ms-grid-column-span: 5;
     grid-column: 7/12;
-    -ms-grid-row: 2;
+    -ms-grid-row: 3;
     -ms-grid-row-span: 2;
-    grid-row: 2/4;
-    background-image: url("../Images/Images_For_Desktop/Section_Fade.jpg");
+    grid-row: 3/5;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.fade_section div.image_container_fade_section {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -236,8 +279,8 @@ section.fade_section div.fade_paragraph_container {
     -ms-grid-column-span: 4;
     grid-column: 2/6;
     -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    grid-row: 3/4;
+    -ms-grid-row-span: 2;
+    grid-row: 3/5;
   }
 }
 
@@ -255,6 +298,16 @@ section.fade_section div.fade_paragraph_container p {
   section.fade_section div.fade_paragraph_container p {
     font-size: 1.25em;
     line-height: 3.5vh;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.fade_section div.fade_paragraph_container p {
+    font-size: 1.5em;
+    line-height: 3.5vh;
+    margin: 2em 0;
+    line-height: 4vh;
   }
 }
 
@@ -311,6 +364,12 @@ section.services_container {
   }
 }
 
+@media (min-width: 1440px) {
+  section.services_container h1 {
+    font-size: 4em;
+  }
+}
+
 section.services_container div.service_1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -337,6 +396,16 @@ section.services_container div.service_1 {
     grid-column: 1/7;
     height: 98vh;
     margin-right: .5vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.services_container div.service_1 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
+    width: 92.5%;
+    margin: 0;
   }
 }
 
@@ -387,6 +456,14 @@ section.services_container div.service_1 div.service_image span.service_number {
   }
 }
 
+@media (min-width: 1440px) {
+  section.services_container div.service_1 div.service_image span.service_number {
+    height: 9vh;
+    width: 5vw;
+    font-weight: 300;
+  }
+}
+
 @media (min-width: 768px) {
   section.services_container div.service_1 h2.service_title {
     font-size: 2.25em;
@@ -401,6 +478,13 @@ section.services_container div.service_1 div.service_image span.service_number {
   }
 }
 
+@media (min-width: 1440px) {
+  section.services_container div.service_1 h2.service_title {
+    font-size: 1.5em;
+    padding: 0.4em;
+  }
+}
+
 section.services_container div.service_1 p.service_explain {
   font-size: 1.2em;
   padding: 0.8em 0;
@@ -411,6 +495,13 @@ section.services_container div.service_1 p.service_explain {
   section.services_container div.service_1 p.service_explain {
     font-size: 1.1em;
     height: 15%;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.services_container div.service_1 p.service_explain {
+    font-size: 1em;
+    height: 20%;
   }
 }
 
@@ -440,6 +531,18 @@ section.services_container div.service_2 {
     grid-column: 7/13;
     height: 98vh;
     margin-left: .5vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.services_container div.service_2 {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 4;
+    grid-column: 5/9;
+    margin: 0;
+    width: 92.5%;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
 }
 
@@ -490,6 +593,14 @@ section.services_container div.service_2 div.service_image span.service_number {
   }
 }
 
+@media (min-width: 1440px) {
+  section.services_container div.service_2 div.service_image span.service_number {
+    height: 9vh;
+    width: 5vw;
+    font-weight: 300;
+  }
+}
+
 @media (min-width: 768px) {
   section.services_container div.service_2 h2.service_title {
     font-size: 2.25em;
@@ -504,6 +615,13 @@ section.services_container div.service_2 div.service_image span.service_number {
   }
 }
 
+@media (min-width: 1440px) {
+  section.services_container div.service_2 h2.service_title {
+    font-size: 1.5em;
+    padding: 0.4em;
+  }
+}
+
 section.services_container div.service_2 p.service_explain {
   font-size: 1.2em;
   padding: 0.8em 0;
@@ -514,6 +632,13 @@ section.services_container div.service_2 p.service_explain {
   section.services_container div.service_2 p.service_explain {
     font-size: 1.1em;
     height: 15%;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.services_container div.service_2 p.service_explain {
+    font-size: 1em;
+    height: 20%;
   }
 }
 
@@ -538,10 +663,22 @@ section.services_container div.service_3 {
 
 @media (min-width: 1024px) {
   section.services_container div.service_3 {
+    height: 97.5vh;
     -ms-grid-column: 4;
     -ms-grid-column-span: 6;
     grid-column: 4/10;
-    height: 97.5vh;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.services_container div.service_3 {
+    height: 98vh;
+    width: 92.5%;
+    margin: 0;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 4;
+    grid-column: 9/13;
+    justify-self: flex-end;
   }
 }
 
@@ -592,6 +729,14 @@ section.services_container div.service_3 div.service_image span.service_number {
   }
 }
 
+@media (min-width: 1440px) {
+  section.services_container div.service_3 div.service_image span.service_number {
+    height: 9vh;
+    width: 5vw;
+    font-weight: 300;
+  }
+}
+
 @media (min-width: 768px) {
   section.services_container div.service_3 h2.service_title {
     font-size: 2.25em;
@@ -606,10 +751,11 @@ section.services_container div.service_3 div.service_image span.service_number {
   }
 }
 
-section.services_container div.service_3 p.service_explain {
-  font-size: 1.2em;
-  padding: 0.8em 0;
-  line-height: 4vh;
+@media (min-width: 1440px) {
+  section.services_container div.service_3 h2.service_title {
+    font-size: 1.5em;
+    padding: 0.4em;
+  }
 }
 
 section.services_container div.service_3 p.service_explain {
@@ -622,6 +768,13 @@ section.services_container div.service_3 p.service_explain {
   section.services_container div.service_3 p.service_explain {
     font-size: 1.1em;
     height: 15%;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.services_container div.service_3 p.service_explain {
+    font-size: 1em;
+    height: 20%;
   }
 }
 
@@ -643,10 +796,28 @@ section.contact {
   background-color: #131212;
 }
 
+@media (min-width: 1440px) {
+  section.contact {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[16];
+        grid-template-columns: repeat(16, 1fr);
+    padding: 2em 1em;
+  }
+}
+
 section.contact div.contain_form {
   background-color: #fff;
   margin: 0.66667em auto;
   width: 100%;
+}
+
+@media (min-width: 1440px) {
+  section.contact div.contain_form {
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 7;
+    grid-column: 9/16;
+  }
 }
 
 section.contact div.contain_form h2.newsletters_heading {
@@ -746,8 +917,35 @@ section.contact div.contain_form form p.message_send_confirmation {
 }
 
 section.contact div.logo_and_bussiness_name {
-  border: 2px solid black;
   display: none;
+}
+
+@media (min-width: 1440px) {
+  section.contact div.logo_and_bussiness_name {
+    display: block;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.contact div.logo_and_bussiness_name a img {
+    height: 7.5vh;
+    -webkit-filter: hue-rotate(40deg);
+            filter: hue-rotate(40deg);
+  }
+}
+
+@media (min-width: 1440px) {
+  section.contact div.logo_and_bussiness_name p {
+    font-size: 1.75em;
+    font-weight: 600;
+    color: #fff;
+  }
 }
 
 section.contact div.grid {
@@ -762,6 +960,33 @@ section.contact div.grid {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.contact div.grid {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 2;
+    grid-column: 5/7;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 }
 
@@ -797,10 +1022,51 @@ section.contact div.grid div.partner {
   }
 }
 
+@media (min-width: 1440px) {
+  section.contact div.grid div.partner {
+    -webkit-transition: -webkit-box-shadow 1s;
+    transition: -webkit-box-shadow 1s;
+    transition: box-shadow 1s;
+    transition: box-shadow 1s, -webkit-box-shadow 1s;
+  }
+  section.contact div.grid div.partner:hover {
+    -webkit-box-shadow: 0px 7.5px 25px -17.5px #fdfdbc, 0px -7.5px 2.5px -7.5px #fdfdbc;
+            box-shadow: 0px 7.5px 25px -17.5px #fdfdbc, 0px -7.5px 2.5px -7.5px #fdfdbc;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.contact div.grid div.partner {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 section.contact div.grid div.partner i {
   color: #fff;
   font-size: 1.25em;
   margin: 0 0.4em;
+}
+
+@media (min-width: 1440px) {
+  section.contact div.grid div.partner i {
+    border: 0px solid transparent;
+    -webkit-transition: padding .5s, border 2s ease-out, -webkit-transform .5s linear;
+    transition: padding .5s, border 2s ease-out, -webkit-transform .5s linear;
+    transition: transform .5s linear, padding .5s, border 2s ease-out;
+    transition: transform .5s linear, padding .5s, border 2s ease-out, -webkit-transform .5s linear;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.contact div.grid div.partner i:hover {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+    padding: 0.33333em;
+    border: 1px solid #fff;
+    background-color: black;
+  }
 }
 
 section.contact div.grid div.information {
@@ -832,6 +1098,24 @@ section.contact div.grid div.information {
   }
 }
 
+@media (min-width: 1440px) {
+  section.contact div.grid div.information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 section.contact div.grid div.information p {
   font-size: 0.85em;
 }
@@ -845,6 +1129,12 @@ section.contact div.grid div.information p {
 @media (min-width: 1024px) {
   section.contact div.grid div.information p {
     font-size: 1.05em;
+  }
+}
+
+@media (min-width: 1440px) {
+  section.contact div.grid div.information p {
+    font-size: 0.95em;
   }
 }
 
