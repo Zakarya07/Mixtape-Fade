@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
     @include responsive_desktop{
@@ -143,7 +144,7 @@ section.fade_section {
             background-size: cover;
             background-position: center center;
         }
-
+        
         @include responsive_laptop() {
             background-image: url("../Images/Images_For_Desktop/Section_Fade.jpg");
             width: 100%;
@@ -152,23 +153,32 @@ section.fade_section {
             grid-row: 3/5;
             align-self: flex-end;
         }
-
+        
         @include responsive_desktop {
             align-self: center;
         }
-
+        
     }
-
+    
     div.fade_paragraph_container {
         width: 80%;
         margin: 0 auto $margin;
-
+                  
         @include responsive_laptop() {
             width: auto;
             grid-column: 2/6;
             grid-row: 3/5;
         }
-
+        @include responsive_desktop {
+            
+            // PARAGRAPHS ANIMATION
+            .fadeInAnimation{
+               opacity:1;
+               transform: translateY(-5vh);
+               line-height: 4.25vh;
+                          }
+        }
+              
         // Paragraphs 
         p {
             @include font_size(1.5);
@@ -178,31 +188,36 @@ section.fade_section {
             line-height: 4vh;
             padding: $padding/3 $padding/3;
             margin: 0 auto $margin;
-
+            
+          
             @include responsive_laptop() {
                 @include font_size(1.25);
                 line-height: 3.5vh;
                 margin: 0;
             }
-
+            
             @include responsive_desktop() {
                 @include font_size(1.5);
                 line-height: 3.5vh;
                 margin: $margin 0;
                 line-height: 4vh;
+                opacity: 0.1;
+                transform: translateY(20vh);
+                transition: transform 1.5s, opacity 1s;
             }
+            
         }
-
+             
         & p:nth-of-type(1) {
             text-align: left;
         }
-
+        
         & p:nth-of-type(2) {
             text-align: right;
         }
     }
+    
 }
-
 //----------------------------------------------------------------------- S E C T I O N __ S E R V I C E S
 section.services_container {
     padding: $padding/2;
@@ -234,7 +249,7 @@ section.services_container {
         }
     }
 
-    // ---------------------------------------------------- Service N ° 1
+    // --------------------------------------------------------  Service N ° 1
     div.service_1 {
         @include display_flex(column, center, center);
         margin: $margin auto;
@@ -250,6 +265,12 @@ section.services_container {
             grid-column: 1/5;
             width: 92.5%;
             margin: 0;
+            transition: transform .30s linear, filter 1s 1s linear;
+            filter:contrast(100%);
+            &:hover{
+                transform: scale(1.015);
+                filter:contrast(140%);
+          }
         }
 
         //  Div that contain Background Image
@@ -328,7 +349,7 @@ section.services_container {
         }
     }
 
-    // ------------------------------------------------------  Service N ° 2
+    // --------------------------------------------------------------  Service N ° 2
     div.service_2 {
         @include display_flex(column, center, center);
         margin: $margin auto;
@@ -345,6 +366,12 @@ section.services_container {
             margin: 0;
             width: 92.5%;
             justify-self: center;
+            transition: transform .30s linear, filter 1s 1s linear;
+            filter:contrast(100%);
+            &:hover{
+                transform: scale(1.015);
+                filter:contrast(175%);
+          }
         }
 
         // Div that contain Background Image
@@ -441,6 +468,12 @@ section.services_container {
             margin: 0;
             grid-column: 9/13;
             justify-self: flex-end;
+            transition: transform .30s linear, filter 1s 1s linear;
+            filter:contrast(105%);
+            &:hover{
+                transform: scale(1.015);
+                filter:contrast(125%);
+          }
         }
 
         // Div that contain Background Image
@@ -681,6 +714,7 @@ section.contact {
             background-color: $bg_dark;
             margin: $margin/3 auto;
             grid-column: 1/5;
+            overflow: hidden;
 
             @include responsive_tablet() {
                 grid-column: 1/2;
@@ -688,27 +722,26 @@ section.contact {
                 box-shadow: 0px 7.5px 2.5px -7.5px rgb(223, 214, 214);
             }
             @include responsive_desktop{
+                height:5vh !important;
                 transition: box-shadow 1s;
                 &:hover{
-                    box-shadow: 0px 7.5px 25px -17.5px rgb(253, 253, 188),0px -7.5px 2.5px -7.5px rgb(253, 253, 188);
+                    box-shadow: 0px 7.5px 25px -17.5px rgb(253, 253, 188),0px -7.5px 2.5px -7.5px rgb(241, 241, 221);
                 }
-            }
-            @include responsive_desktop {
                 align-self: center;
             }
+       
             // Icons of Partners
             i {
                 color: $light_color;
                 @include font_size(1.25);
                 margin: 0 $margin/5;
-                @include responsive_desktop{
-                    border: 0px solid transparent;
-                    transition: transform .5s linear, padding .5s, border 2s ease-out;
-                }
+             
                 @include responsive_desktop {
+                    border: 0px solid transparent;
+                    transition: transform 1s linear, padding .75s, border 1s .5s ease-out;
                     &:hover{
-                        transform: scale(1.25);
-                        padding: $padding/6;
+                        transform: scale(1.05);
+                        padding: $padding/1.5;
                         border: 1px solid $light_color;
                         background-color:darken($bg_dark,20%);
                     }

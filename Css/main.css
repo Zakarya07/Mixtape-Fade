@@ -284,6 +284,15 @@ section.fade_section div.fade_paragraph_container {
   }
 }
 
+@media (min-width: 1440px) {
+  section.fade_section div.fade_paragraph_container .fadeInAnimation {
+    opacity: 1;
+    -webkit-transform: translateY(-5vh);
+            transform: translateY(-5vh);
+    line-height: 4.25vh;
+  }
+}
+
 section.fade_section div.fade_paragraph_container p {
   font-size: 1.5em;
   font-weight: 300;
@@ -308,6 +317,13 @@ section.fade_section div.fade_paragraph_container p {
     line-height: 3.5vh;
     margin: 2em 0;
     line-height: 4vh;
+    opacity: 0.1;
+    -webkit-transform: translateY(20vh);
+            transform: translateY(20vh);
+    -webkit-transition: opacity 1s, -webkit-transform 1.5s;
+    transition: opacity 1s, -webkit-transform 1.5s;
+    transition: transform 1.5s, opacity 1s;
+    transition: transform 1.5s, opacity 1s, -webkit-transform 1.5s;
   }
 }
 
@@ -406,6 +422,18 @@ section.services_container div.service_1 {
     grid-column: 1/5;
     width: 92.5%;
     margin: 0;
+    -webkit-transition: -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    transition: -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    transition: transform .30s linear, filter 1s 1s linear;
+    transition: transform .30s linear, filter 1s 1s linear, -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    -webkit-filter: contrast(100%);
+            filter: contrast(100%);
+  }
+  section.services_container div.service_1:hover {
+    -webkit-transform: scale(1.015);
+            transform: scale(1.015);
+    -webkit-filter: contrast(140%);
+            filter: contrast(140%);
   }
 }
 
@@ -543,6 +571,18 @@ section.services_container div.service_2 {
     width: 92.5%;
     -ms-grid-column-align: center;
         justify-self: center;
+    -webkit-transition: -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    transition: -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    transition: transform .30s linear, filter 1s 1s linear;
+    transition: transform .30s linear, filter 1s 1s linear, -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    -webkit-filter: contrast(100%);
+            filter: contrast(100%);
+  }
+  section.services_container div.service_2:hover {
+    -webkit-transform: scale(1.015);
+            transform: scale(1.015);
+    -webkit-filter: contrast(175%);
+            filter: contrast(175%);
   }
 }
 
@@ -679,6 +719,18 @@ section.services_container div.service_3 {
     -ms-grid-column-span: 4;
     grid-column: 9/13;
     justify-self: flex-end;
+    -webkit-transition: -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    transition: -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    transition: transform .30s linear, filter 1s 1s linear;
+    transition: transform .30s linear, filter 1s 1s linear, -webkit-transform .30s linear, -webkit-filter 1s 1s linear;
+    -webkit-filter: contrast(105%);
+            filter: contrast(105%);
+  }
+  section.services_container div.service_3:hover {
+    -webkit-transform: scale(1.015);
+            transform: scale(1.015);
+    -webkit-filter: contrast(125%);
+            filter: contrast(125%);
   }
 }
 
@@ -998,6 +1050,7 @@ section.contact div.grid div.partner {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-column: 1/5;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -1024,22 +1077,18 @@ section.contact div.grid div.partner {
 
 @media (min-width: 1440px) {
   section.contact div.grid div.partner {
+    height: 5vh !important;
     -webkit-transition: -webkit-box-shadow 1s;
     transition: -webkit-box-shadow 1s;
     transition: box-shadow 1s;
     transition: box-shadow 1s, -webkit-box-shadow 1s;
-  }
-  section.contact div.grid div.partner:hover {
-    -webkit-box-shadow: 0px 7.5px 25px -17.5px #fdfdbc, 0px -7.5px 2.5px -7.5px #fdfdbc;
-            box-shadow: 0px 7.5px 25px -17.5px #fdfdbc, 0px -7.5px 2.5px -7.5px #fdfdbc;
-  }
-}
-
-@media (min-width: 1440px) {
-  section.contact div.grid div.partner {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+  }
+  section.contact div.grid div.partner:hover {
+    -webkit-box-shadow: 0px 7.5px 25px -17.5px #fdfdbc, 0px -7.5px 2.5px -7.5px #f1f1dd;
+            box-shadow: 0px 7.5px 25px -17.5px #fdfdbc, 0px -7.5px 2.5px -7.5px #f1f1dd;
   }
 }
 
@@ -1052,18 +1101,15 @@ section.contact div.grid div.partner i {
 @media (min-width: 1440px) {
   section.contact div.grid div.partner i {
     border: 0px solid transparent;
-    -webkit-transition: padding .5s, border 2s ease-out, -webkit-transform .5s linear;
-    transition: padding .5s, border 2s ease-out, -webkit-transform .5s linear;
-    transition: transform .5s linear, padding .5s, border 2s ease-out;
-    transition: transform .5s linear, padding .5s, border 2s ease-out, -webkit-transform .5s linear;
+    -webkit-transition: padding .75s, border 1s .5s ease-out, -webkit-transform 1s linear;
+    transition: padding .75s, border 1s .5s ease-out, -webkit-transform 1s linear;
+    transition: transform 1s linear, padding .75s, border 1s .5s ease-out;
+    transition: transform 1s linear, padding .75s, border 1s .5s ease-out, -webkit-transform 1s linear;
   }
-}
-
-@media (min-width: 1440px) {
   section.contact div.grid div.partner i:hover {
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
-    padding: 0.33333em;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    padding: 1.33333em;
     border: 1px solid #fff;
     background-color: black;
   }

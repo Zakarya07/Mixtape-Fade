@@ -41,11 +41,11 @@
             <!-- Div that contain the paragraph tag that is gone a be fadeIn -->
             <div class="fade_paragraph_container">
                 <!-- Paragraphs -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ea veritatis deleniti eius voluptas
+                <p class="paragraphs_to_fade">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ea veritatis deleniti eius voluptas
                     harum accusamus rem omnis. Suscipit ipsam repellendus ipsa tempore excepturi culpa amet dicta
                     doloremque commodi! Cum!</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ea veritatis deleniti eius voluptas
+                <p class="paragraphs_to_fade">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ea veritatis deleniti eius voluptas
                     harum accusamus rem omnis. Suscipit ipsam repellendus ipsa tempore excepturi culpa amet dicta
                     doloremque commodi! Cum!</p>
             </div>
@@ -98,7 +98,7 @@
                 <h2 class="newsletters_heading">sign up to our newsletter</h2>
                 <!-----------Contact Form -->
                 <form method="POST">
-                    <label for="">Saisissez votre adresse e-mail ici</label>
+                    <label for="email">Saisissez votre adresse e-mail ici</label>
                     <input type="email" required id="email" name="email">
                     <input type="submit" value="Envoyer">
                     <p class="message_send_confirmation">Merci pour votre envoi !</p>
@@ -113,9 +113,15 @@
             <!----------------------- Div that contains icons of partners -->
             <div class="grid">
             <div class="partner">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-linkedin-in"></i>
+                <a href="http://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="http://www.twitter.com" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="http://www.linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
 
             </div>
 
@@ -141,8 +147,8 @@
 
         <!-- Button that take to the Top of the Page -->
         <button type="button" id="topButton">TOP</button>
-
         <script src="script.js"></script>
+
     </body>
 
 </html>
